@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/cWesternButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="양식"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cBunsikButton2"
+        app:layout_constraintEnd_toStartOf="@+id/cChinaButton"
+        app:layout_constraintStart_toEndOf="@+id/cKoreaButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/cChinaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="중식"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cDrinkButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cWesternButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:rippleColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/nicknameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="12dp"
+        android:text="닉네임: "
+        app:layout_constraintBottom_toTopOf="@+id/studentIDText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentIDText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="학번: "
+        app:layout_constraintBottom_toTopOf="@+id/scoreText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nicknameText" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="18dp"
+        android:text="평점: "
+        app:layout_constraintBottom_toTopOf="@+id/sexText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentIDText" />
+
+    <TextView
+        android:id="@+id/sexText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="19dp"
+        android:text="성별: "
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreText" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:text="email: "
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexText" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="334dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="289dp"
+        android:text="선호도(입맛) 조사"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cKoreaButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:text="한식"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:iconPadding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cJapenButton"
+        app:layout_constraintEnd_toStartOf="@+id/cWesternButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/cJapenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="일식"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/cBunsikButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cKoreaButton"
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/cDrinkButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="술집"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cBunsikButton2"
+        app:layout_constraintTop_toBottomOf="@+id/cChinaButton"
+        app:rippleColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/cBunsikButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="분식"
+        android:textColor="#000000"
+        app:backgroundTint="#00FFFFFF"
+        app:iconPadding="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/cDrinkButton"
+        app:layout_constraintStart_toEndOf="@+id/cJapenButton"
+        app:layout_constraintTop_toBottomOf="@+id/cWesternButton"
+        app:rippleColor="#FFFFFF" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
