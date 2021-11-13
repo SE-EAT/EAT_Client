@@ -1,15 +1,18 @@
 # EAT_Client
 
 ## Brief Introduction
-> Eating AppointmenT(EAT) 프로젝트는 밥친구를 찾아주는 서비스를 제공합니다.
+- Eating AppointmenT(EAT) 프로젝트는 밥친구를 찾아주는 서비스를 제공합니다.
+
 
 
 ## Platform
 - Android moblie
 
 
+
 ## Tool
 - Android Studio Arctic Fox | 2020.3.1 Patch 2
+
 
 
 ## Main Functions ( Client )
@@ -24,11 +27,14 @@
 + 피드백
 
 
+
 ## Using APIs
 - Google Map API
 - Gmail API
 
 
+
 ## Client Developer
 - InYong Shin
 - Gyumin Jung
+
