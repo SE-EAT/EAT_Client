@@ -3,13 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/drawable/border_login.xml" value="0.146875" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/drawable/border_textview.xml" value="0.146875" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_automatching.xml" value="0.2418478260869565" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_feedback.xml" value="0.2418478260869565" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_find.xml" value="0.2418478260869565" />
-        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_login.xml" value="0.13072916666666667" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_profile.xml" value="0.2418478260869565" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_recorestaurant.xml" value="0.2418478260869565" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_register.xml" value="0.13072916666666667" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_room.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_search_info.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/activity_start.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/layout.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/layout/login.xml" value="0.2418478260869565" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.146875" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.146875" />
         <entry key="..\:/Users/tlsdl/AndroidStudioProjects/EATProject/app/src/main/res/layout/activity_automatching.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/tlsdl/AndroidStudioProjects/EATProject/app/src/main/res/layout/activity_feedback.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/tlsdl/AndroidStudioProjects/EATProject/app/src/main/res/layout/activity_find.xml" value="0.2604166666666667" />
