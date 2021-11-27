@@ -1,8 +1,8 @@
-package com.example.project_bobgachi;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.eatproject;
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SearchInfo extends AppCompatActivity {
 

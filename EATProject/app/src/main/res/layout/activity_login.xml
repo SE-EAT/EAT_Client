@@ -84,6 +84,7 @@
         android:background="#FFFFFF"
 
         android:text="아이디/비밀번호 찾기"
+        android:textColor="#757575"
         app:layout_constraintEnd_toEndOf="@+id/login_btn"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/login_btn"

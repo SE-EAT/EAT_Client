@@ -1,4 +1,4 @@
-package com.example.project_bobgachi;
+package com.example.eatproject;
 
 public class RequestRegister  {
 
