@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">EATProject</string>
+    <string name="inputID">아이디</string>
 </resources>
