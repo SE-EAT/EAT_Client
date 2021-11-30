@@ -14,6 +14,7 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+        // 프로필 수정 화면 전환
         Button profileButton = (Button) findViewById(R.id.profileButton);
         profileButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -26,6 +27,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+        // 밥친구 찾기 화면 전환
         Button findButton = (Button) findViewById(R.id.findMealGroupButton);
         findButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -35,6 +37,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+        // 식당 추천 화면 전환
         Button recoRestButton = (Button) findViewById(R.id.recommendRestButton);
         recoRestButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -44,6 +47,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
+        // 피드백 화면 전환
         Button feedbackButton = (Button) findViewById(R.id.feedbackButton);
         feedbackButton.setOnClickListener(new View.OnClickListener(){
             @Override
