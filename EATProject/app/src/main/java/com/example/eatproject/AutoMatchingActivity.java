@@ -2,7 +2,6 @@ package com.example.eatproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import io.realm.Realm;
 
 import androidx.appcompat.app.AppCompatActivity;
 

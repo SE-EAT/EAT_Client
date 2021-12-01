@@ -7,7 +7,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.realm.Realm;
 
 public class FindActivity extends AppCompatActivity {
 
@@ -16,9 +15,6 @@ public class FindActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.activity_find);
         Intent indent = getIntent();
-
-        Realm.init(this);
-
 
         // Automating 화면 전환
         Button autoMatchingButton = (Button) findViewById(R.id.autoMatchingButton);

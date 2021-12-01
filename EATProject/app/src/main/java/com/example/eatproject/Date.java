@@ -6,8 +6,8 @@ public class Date {
     private int hour;
     private int minute;
 
-    Date(){}
-    Date(int month, int day, int hour, int minute){
+    public Date(){}
+    public Date(int month, int day, int hour, int minute){
         this.month = month;
         this.day = day;
         this.hour = hour;

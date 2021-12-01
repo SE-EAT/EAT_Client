@@ -19,15 +19,16 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AutoMatchingActivity"></activity>
+        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".FindActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".RecoRestaurantActivity"></activity>
         <activity android:name=".Register"></activity>
+        <activity android:name=".RoomActivity"></activity>
         <activity android:name=".SearchInfo"></activity>
         <activity android:name=".StartActivity"></activity>
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".FindActivity"></activity>
-        <activity android:name=".RecoRestaurantActivity"></activity>
-        <activity android:name=".FeedbackActivity"></activity>
-        <activity android:name=".AutoMatchingActivity"></activity>
-        <activity android:name=".RoomActivity"></activity>
+
 
     </application>
 

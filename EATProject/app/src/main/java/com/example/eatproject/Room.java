@@ -1,17 +1,14 @@
 package com.example.eatproject;
 
-import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
-import io.realm.annotations.Required;
 
-public class Room extends RealmObject {
-    @PrimaryKey private int roomID;
+public class Room {
+    private int roomID;
     private int restaurantID;
     private int[] users;
     private Date date;
     private int roomState;
 
-    Room(){}
+    public Room() {}
     public Room(int roomID, int restaurantID, int[] users, Date date, int roomState) {
         this.roomID = roomID;
         this.restaurantID = restaurantID;
