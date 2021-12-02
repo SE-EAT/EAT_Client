@@ -6,14 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class StartActivity extends AppCompatActivity {
+import com.example.eatproject.models.UserInfo;
+
+public class StartActivity extends AppCompatActivity implements WebserviceResponseListner {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_start);
+
+        // new WebService(StartActivity.this, (WebserviceResponseListner)StartActivity.this,
+        //        "userInfo").execute();
+
 
         // 프로필 수정 화면 전환
         Button profileButton = (Button) findViewById(R.id.profileButton);
@@ -57,5 +64,19 @@ public class StartActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void OnResponse(Object response, boolean flagToCheckFailure, String webServiceName) {
+
+        if (webServiceName.equalsIgnoreCase("userInfo")) {
+            if (!flagToCheckFailure) {
+                UserInfo data = (UserInfo) response;
+                Toast.makeText(this, data.toString(), Toast.LENGTH_LONG).show();
+                // tv_msg.setText(data.getMessage());
+            } else {
+                Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }

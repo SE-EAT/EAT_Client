@@ -4,11 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.eatproject.models.Room;
+import com.example.eatproject.models.UserInfo;
 
-public class FindActivity extends AppCompatActivity {
+
+public class FindActivity extends AppCompatActivity implements WebserviceResponseListner {
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -34,5 +38,21 @@ public class FindActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
+        //        "getRooms").execute();
+    }
+
+    @Override
+    public void OnResponse(Object response, boolean flagToCheckFailure, String webServiceName) {
+        if (webServiceName.equalsIgnoreCase("getRooms")) {
+            if (!flagToCheckFailure) {
+                Room data = (Room) response;
+                Toast.makeText(this, data.toString(), Toast.LENGTH_LONG).show();
+                // tv_msg.setText(data.getMessage());
+            } else {
+                Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }

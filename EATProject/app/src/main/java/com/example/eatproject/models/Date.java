@@ -1,4 +1,4 @@
-package com.example.eatproject;
+package com.example.eatproject.models;
 
 public class Date {
     private int month;
