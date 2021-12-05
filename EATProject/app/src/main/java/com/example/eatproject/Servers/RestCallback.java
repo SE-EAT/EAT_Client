@@ -1,4 +1,4 @@
-package com.example.eatproject;
+package com.example.eatproject.servers;
 
 import retrofit.Callback;
 // import javax.security.auth.callback.Callback;

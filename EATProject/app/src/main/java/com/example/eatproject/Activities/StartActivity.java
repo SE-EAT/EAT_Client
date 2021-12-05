@@ -1,4 +1,4 @@
-package com.example.eatproject;
+package com.example.eatproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.eatproject.R;
+import com.example.eatproject.servers.WebserviceResponseListner;
 import com.example.eatproject.models.UserInfo;
 
 public class StartActivity extends AppCompatActivity implements WebserviceResponseListner {
@@ -15,8 +17,9 @@ public class StartActivity extends AppCompatActivity implements WebserviceRespon
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_start);
+
+
 
         // new WebService(StartActivity.this, (WebserviceResponseListner)StartActivity.this,
         //        "userInfo").execute();

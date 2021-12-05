@@ -1,7 +1,9 @@
-package com.example.eatproject;
+package com.example.eatproject.servers;
 
 import com.squareup.okhttp.OkHttpClient;
 
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.util.concurrent.TimeUnit;
 
 import retrofit.RestAdapter;
@@ -28,11 +30,18 @@ public class RestClient {
 
         OkHttpClient okHttpClient = new OkHttpClient();
         okHttpClient.setReadTimeout(20 * 1000, TimeUnit.MILLISECONDS);
+
+        //create a cookieManager so your client can be cookie persistant
+        CookieManager cookieManager = new CookieManager();
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+        okHttpClient.setCookieHandler(cookieManager); //finally set the cookie handler on client
+
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint(ROOT).setClient(new OkClient(okHttpClient)).setLogLevel(RestAdapter.LogLevel.FULL)
+                .setEndpoint(ROOT)
+                .setClient(new OkClient(okHttpClient))
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
 
         REST_CLIENT = restAdapter.create(ApiMethods.class);
     }
-
 }

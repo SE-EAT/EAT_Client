@@ -1,19 +1,18 @@
-package com.example.eatproject;
+package com.example.eatproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AutoMatchingActivity extends AppCompatActivity {
+import com.example.eatproject.R;
+
+public class RoomActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        setContentView(R.layout.activity_automatching);
+        setContentView(R.layout.activity_room);
         Intent intent = getIntent();
-
-
-
     }
 }

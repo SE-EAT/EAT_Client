@@ -7,6 +7,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.eatproject.activities.MainActivity;
+
 public class Register extends AppCompatActivity {
     private Button btn_exit;
     @Override
