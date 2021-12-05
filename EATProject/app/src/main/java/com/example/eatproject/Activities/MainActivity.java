@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.eatproject.R;
-import com.example.eatproject.Register;
 import com.example.eatproject.SearchInfo;
 
 public class MainActivity extends AppCompatActivity {

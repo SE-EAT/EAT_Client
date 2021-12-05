@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".activities.MainActivity" >
 
     <EditText
@@ -139,5 +140,8 @@
         app:layout_constraintWidth_percent="0.2"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
+=======
+    tools:context=".LoginActivity">
+>>>>>>> 19bd29620d1357b1d600a98eedf14a0c66b44404
 
 </androidx.constraintlayout.widget.ConstraintLayout>
