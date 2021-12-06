@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/gyumin/Desktop/EAT-Client/EAT_Client/EATProject/app/src/main/res/layout/activity_login.xml" value="0.1296875" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT-Client/EAT_Client/EATProject/app/src/main/res/layout/activity_register.xml" value="0.264" />
+        <entry key="..\:/Users/gyumin/Desktop/EAT-Client/EAT_Client/EATProject/app/src/main/res/layout/activity_research.xml" value="0.1296875" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/drawable/border_login.xml" value="0.146875" />
         <entry key="..\:/Users/gyumin/Desktop/EAT_Client/EATProject/app/src/main/res/drawable/border_textview.xml" value="0.146875" />

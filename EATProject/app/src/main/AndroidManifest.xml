@@ -33,6 +33,8 @@
         <activity android:name=".activities.RecoRestaurantActivity" />
         <activity android:name=".activities.RoomActivity" />
         <activity android:name=".activities.MainActivity" />
+        <activity android:name=".activities.RegisterActivity"></activity>
+
     </application>
 
 </manifest>
