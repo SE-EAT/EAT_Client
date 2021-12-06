@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.eatproject.R;
-import com.example.eatproject.SearchInfo;
 
 public class MainActivity extends AppCompatActivity {
     private Button btn_register;
@@ -20,21 +19,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        // setContentView(R.layout.activity_login);
 
 
 
-        inpId = findViewById(R.id.loginId);
-        inpId.setSelection(inpId.length());
+        // inpId = findViewById(R.id.loginId);
+        // inpId.setSelection(inpId.length());
 
-        btn_register = findViewById(R.id.register_btn);
-        btn_search = findViewById(R.id.search_btn);
+        // btn_register = findViewById(R.id.register_btn);
+        // btn_search = findViewById(R.id.search_btn);
         //회원가입버튼 클릭 시 회원가입 화면으로 이동
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Register.class);
-                startActivity(intent);
+                // Intent intent = new Intent(getApplicationContext(), Register.class);
+                // startActivity(intent);
             }
         });
 
@@ -42,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
         btn_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SearchInfo.class);
-                startActivity(intent);
+                // Intent intent = new Intent(getApplicationContext(), SearchInfo.class);
+                // startActivity(intent);
             }
         });
     }

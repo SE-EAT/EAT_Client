@@ -12,6 +12,7 @@ import com.example.eatproject.models.Room;
 import com.example.eatproject.models.UserInfo;
 
 import java.util.List;
+import java.util.Locale;
 
 import retrofit.RetrofitError;
 import retrofit.client.Response;
@@ -22,10 +23,19 @@ public class WebService extends AsyncTask<String, Void, String> {
     WebserviceResponseListner listener = null;
     String METHOD_NAME = "";
 
+    private RequestCategory category = new RequestCategory("");
+
     public WebService(Activity activity, WebserviceResponseListner listener, String METHOD_NAME) {
         this.activity = activity;
         this.listener = listener;
         this.METHOD_NAME = METHOD_NAME;
+    }
+
+    public WebService(Activity activity, WebserviceResponseListner listener, String METHOD_NAME, RequestCategory category) {
+        this.activity = activity;
+        this.listener = listener;
+        this.METHOD_NAME = METHOD_NAME;
+        this.category = category;
     }
 
     @Override
@@ -80,13 +90,11 @@ public class WebService extends AsyncTask<String, Void, String> {
         });
     }
 
-    private RequestCategory tmpCategory = new RequestCategory("한식");
     private void createRoom() {
-        RestClient.get().postCreateRoom(tmpCategory, new RestCallback<List<Restaurant>>() {
-
+        RestClient.get().postCreateRoom(category, new RestCallback<List<Restaurant>>() {
             @Override
             public void success(List<Restaurant> restaurants, Response response) {
-                Log.e("Successful", restaurants.toString() + "/" + response.getUrl());
+                Log.e("Successful",  restaurants.get(0).name + "/" + response.getUrl());
                 listener.OnResponse(restaurants, false, "createRoom");
             }
 

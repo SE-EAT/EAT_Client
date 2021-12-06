@@ -26,12 +26,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.AutoMatchingActivity" />
+        <activity android:name=".activities.CreateRoomActivity" />
         <activity android:name=".activities.FeedbackActivity" />
         <activity android:name=".activities.FindActivity" />
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.RecoRestaurantActivity" />
         <activity android:name=".activities.RoomActivity" />
-        <activity android:name=".SearchInfo" />
         <activity android:name=".activities.MainActivity" />
     </application>
 

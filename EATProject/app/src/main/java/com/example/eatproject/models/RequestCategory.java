@@ -4,8 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class RequestCategory {
-    @SerializedName("category")
-    @Expose
+
     public String category;
 
     public RequestCategory(String category) {
