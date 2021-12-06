@@ -12,38 +12,33 @@ import com.example.eatproject.R;
 
 public class MainActivity extends AppCompatActivity {
     private Button btn_register;
-    private Button btn_search;
-    private View register_view;
-    private EditText inpId;
+    private Button btn_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_login);
 
-        // inpId = findViewById(R.id.loginId);
-        // inpId.setSelection(inpId.length());
 
-        // btn_register = findViewById(R.id.register_btn);
-        // btn_search = findViewById(R.id.search_btn);
+        btn_login = findViewById(R.id.buttonLogin);
         btn_register = findViewById(R.id.buttonRegister);
-
-        //회원가입버튼 클릭 시 회원가입 화면으로 이동
-        btn_register.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // Intent intent = new Intent(getApplicationContext(), Register.class);
-                // startActivity(intent);
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                startActivity(intent);
             }
         });
 
-        //아이디/PW 찾기 버튼 클릭시 이동
-        btn_search.setOnClickListener(new View.OnClickListener() {
+        //회원가입버튼 클릭 시 회원가입 화면으로 이동
+        btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
             }
         });
+
+
     }
 }
