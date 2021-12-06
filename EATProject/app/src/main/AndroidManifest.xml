@@ -24,9 +24,8 @@
         <activity android:name=".FindActivity"></activity>
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".RecoRestaurantActivity"></activity>
-        <activity android:name=".Register"></activity>
+        <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".RoomActivity"></activity>
-        <activity android:name=".SearchInfo"></activity>
         <activity android:name=".StartActivity"></activity>
 
 
