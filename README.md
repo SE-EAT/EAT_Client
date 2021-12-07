@@ -3,6 +3,8 @@
 
 ## Platform
 - Android moblie
+- Android SDK : Android 4.1 (Jelly Bean) API 19 이상
+- Test VM : Pixel 2 API 24
 
 
 ## Tool
