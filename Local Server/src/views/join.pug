@@ -1,0 +1,30 @@
+extends base
+
+block content
+    if errorMessage
+        span=errorMessage
+    form(method="POST")
+        input(name="ID", type="text", placeholder="ID", required)
+        input(name="password", type="password", placeholder="Password", required)
+        input(name="password_confirm", type="password", placeholder="Confirm Password", required)
+        input(name="email", type="email", placeholder="Ajou Email", required)
+        input(name="nickname", type="text", placeholder="Nickname", required)
+        input(name="studentID", type="text", placeholder="Student ID", required)
+        div
+            input(name="sex", type="radio", id="man", value="Man")
+            label(for="man") Man
+            input(name="sex", type="radio", id="woman", value="Woman")
+            label(for="woman") Woman
+
+        input(name="address", type="text", placeholder="Address", required)
+        br
+        input(type="submit", value="Join")
+
+    hr
+    div
+        span Already have an account? 
+        a(href="/") Log in now &rarr;
+
+block scripts
+    //- script(type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=243394639349d3123c045985e0ec86a5&libraries=services")
+    //- script(src="/public/js/map.js")
