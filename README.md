@@ -5,6 +5,7 @@
 - Android moblie
 - Android SDK : Android 4.1 (Jelly Bean) API 19 이상
 - Test VM : Pixel 2 API 24
+- Local Server 동작은 Server의 README에 명시되어 있음.
 
 
 ## Tool
