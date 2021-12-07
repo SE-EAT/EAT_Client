@@ -8,6 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 import retrofit.RestAdapter;
 import retrofit.client.OkClient;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RestClient {
     private static ApiMethods REST_CLIENT;
@@ -24,7 +26,6 @@ public class RestClient {
     public static ApiMethods get() {
         return REST_CLIENT;
     }
-    public static ApiMethods post() { return REST_CLIENT; }
 
     private static void setupRestClient() {
 
@@ -38,6 +39,8 @@ public class RestClient {
 
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(ROOT)
+                // .addConverterFactory(ScalarsConverterFactory.create())
+                //.addConverterFactory(GsonConverterFactory.create())
                 .setClient(new OkClient(okHttpClient))
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();

@@ -11,7 +11,7 @@ public class Room {
     private String _id;
     @SerializedName("users")
     @Expose
-    private String[] users;
+    private UserInfo[] users;
     @SerializedName("restaurant")
     @Expose
     private Restaurant restaurant;
@@ -22,7 +22,7 @@ public class Room {
     @Expose
     private int roomState;
 
-    public Room(String _id, String[] users, Restaurant restaurant, String date, int roomState) {
+    public Room(String _id, UserInfo[] users, Restaurant restaurant, String date, int roomState) {
         this._id = _id;
         this.users = users;
         this.restaurant = restaurant;
@@ -36,10 +36,10 @@ public class Room {
     public void set_id(String _id) {
         this._id = _id;
     }
-    public String[] getUsers() {
+    public UserInfo[] getUsers() {
         return users;
     }
-    public void setUsers(String[] users) {
+    public void setUsers(UserInfo[] users) {
         this.users = users;
     }
     public Restaurant getRestaurant() {

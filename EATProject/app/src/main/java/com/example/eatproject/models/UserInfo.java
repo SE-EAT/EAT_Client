@@ -31,9 +31,9 @@ public class UserInfo {
     @SerializedName("taste")
     @Expose
     public int[] taste;
-    // @SerializedName("score")
-    // @Expose
-    // public int score;
+    @SerializedName("rating")
+    @Expose
+    public int score;
     // @SerializedName("history")
     // @Expose
     // public Room[] history;
@@ -44,8 +44,8 @@ public class UserInfo {
     // @Expose
     // public int userState;
 
-
-    public UserInfo(String _id, String userID, String password, String email, String nickName, int studentID, String sex, String address, int[] taste) {
+    public UserInfo(){ }
+    public UserInfo(String _id, String userID, String password, String email, String nickName, int studentID, String sex, String address, int[] taste, int score) {
         this._id = _id;
         this.userID = userID;
         this.password = password;
@@ -54,7 +54,9 @@ public class UserInfo {
         this.studentID = studentID;
         this.sex = sex;
         this.address = address;
+        // this.taste = taste;
         this.taste = taste;
+        this.score = score;
     }
 
     public String getPassword() { return password; }
@@ -75,4 +77,6 @@ public class UserInfo {
     public void setAddress(String address) { this.address = address; }
     public int[] getTaste() { return taste; }
     public void setTaste(int[] taste) { this.taste = taste; }
+    public int getScore() { return score; }
+    public void setScore(int score) { this.score = score; }
 }

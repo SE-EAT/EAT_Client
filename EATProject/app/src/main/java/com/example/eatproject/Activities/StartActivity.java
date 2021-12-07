@@ -9,8 +9,12 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.eatproject.R;
+import com.example.eatproject.models.ResponseMessage;
+import com.example.eatproject.servers.WebService;
 import com.example.eatproject.servers.WebserviceResponseListner;
 import com.example.eatproject.models.UserInfo;
+
+import java.util.List;
 
 public class StartActivity extends AppCompatActivity implements WebserviceResponseListner {
 
@@ -30,11 +34,8 @@ public class StartActivity extends AppCompatActivity implements WebserviceRespon
         profileButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                // 새로운 창을 만들기 위한 Intent 객체
-                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
-
-                // 만든 Intent를 실행
-                startActivity(intent);
+                new WebService(StartActivity.this, (WebserviceResponseListner)StartActivity.this,
+                        "getProfile").execute();
             }
         });
 
@@ -77,6 +78,19 @@ public class StartActivity extends AppCompatActivity implements WebserviceRespon
                 UserInfo data = (UserInfo) response;
                 Toast.makeText(this, data.toString(), Toast.LENGTH_LONG).show();
                 // tv_msg.setText(data.getMessage());
+            } else {
+                Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
+            }
+        } else if (webServiceName.equalsIgnoreCase("getProfile")) {
+            if (!flagToCheckFailure) {
+                List<String> data = (List<String>) response;
+                Toast.makeText(this, data.toString(), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                for(int i=0; i<5; i++){
+                    intent.putExtra("list" + i, data.get(i));
+                }
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
             }

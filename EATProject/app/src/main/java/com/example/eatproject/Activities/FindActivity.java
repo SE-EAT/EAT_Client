@@ -2,6 +2,7 @@ package com.example.eatproject.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import java.util.List;
 public class FindActivity extends AppCompatActivity implements WebserviceResponseListner {
 
     List<Button> roomButtons = new ArrayList<Button>();
+    List<Room> rooms = new ArrayList<Room>();
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -70,8 +72,9 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
         room1Button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                // if(rooms.isEmpty()) return;
                 new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
-                        "getRoomById").execute();
+                        "getRoomById", rooms.get(0).get_id()).execute();
 
                 Intent intent = new Intent(getApplicationContext(), RoomActivity.class);
                 startActivity(intent);
@@ -140,7 +143,9 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
         for(int i =0; i<rooms.size() && i<4; i++){
             Button roomButton = roomButtons.get(i);
             roomButton.setVisibility(View.VISIBLE);
-            roomButton.setText(rooms.get(i).getUsers()[0]);
+            roomButton.setText(rooms.get(i).getUsers()[0].nickName + "\n" +
+                    rooms.get(i).getRestaurant().name + "\n" +
+                    rooms.get(i).getDate());
         }
     }
 
@@ -149,9 +154,20 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
     public void OnResponse(Object response, boolean flagToCheckFailure, String webServiceName) {
         if (webServiceName.equalsIgnoreCase("getRooms")) {
             if (!flagToCheckFailure) {
-                List<Room> rooms = (List<Room>) response;
+                rooms = (List<Room>) response;
+                // Log.e(rooms.toString());
                 // Toast.makeText(this, rooms.get(0).toString(), Toast.LENGTH_LONG).show();
                 updateRoomList(rooms);
+                // tv_msg.setText(data.getMessage());
+            } else {
+                Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
+            }
+        } else if (webServiceName.equalsIgnoreCase("getRoomById")) {
+            if (!flagToCheckFailure) {
+                List<Room> rooms = (List<Room>) response;
+                // Log.e(rooms.toString());
+                // Toast.makeText(this, rooms.get(0).toString(), Toast.LENGTH_LONG).show();
+
                 // tv_msg.setText(data.getMessage());
             } else {
                 Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();

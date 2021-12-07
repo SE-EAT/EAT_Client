@@ -13,6 +13,7 @@ public class RequestJoinRoom {
     @Expose
     public String _id;
 
+    public RequestJoinRoom() {}
     public RequestJoinRoom(String id, String _id) {
         this.id = id;
         this._id = _id;
