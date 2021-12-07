@@ -32,7 +32,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.squareup.retrofit:retrofit:1.9.0'
     implementation 'com.squareup.okhttp:okhttp:2.0.0'
-    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.8.1"
+    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.8.1'
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.8.6'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:4.9.0'
 }
