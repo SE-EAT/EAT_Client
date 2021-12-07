@@ -23,12 +23,6 @@ public class StartActivity extends AppCompatActivity implements WebserviceRespon
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-
-
-        // new WebService(StartActivity.this, (WebserviceResponseListner)StartActivity.this,
-        //        "userInfo").execute();
-
-
         // 프로필 수정 화면 전환
         Button profileButton = (Button) findViewById(R.id.profileButton);
         profileButton.setOnClickListener(new View.OnClickListener(){
@@ -84,8 +78,6 @@ public class StartActivity extends AppCompatActivity implements WebserviceRespon
         } else if (webServiceName.equalsIgnoreCase("getProfile")) {
             if (!flagToCheckFailure) {
                 List<String> data = (List<String>) response;
-                Toast.makeText(this, data.toString(), Toast.LENGTH_LONG).show();
-
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 for(int i=0; i<5; i++){
                     intent.putExtra("list" + i, data.get(i));

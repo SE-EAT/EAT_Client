@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/reco_room1button"
         android:layout_width="150dp"
-        android:layout_height="75dp"
+        android:layout_height="100dp"
         android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="100dp"
@@ -38,7 +38,7 @@
     <Button
         android:id="@+id/reco_room2button"
         android:layout_width="150dp"
-        android:layout_height="75dp"
+        android:layout_height="100dp"
         android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="50dp"
@@ -54,7 +54,7 @@
     <Button
         android:id="@+id/reco_room3button"
         android:layout_width="150dp"
-        android:layout_height="75dp"
+        android:layout_height="100dp"
         android:layout_marginStart="150dp"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="50dp"

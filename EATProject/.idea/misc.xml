@@ -38,10 +38,10 @@
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout-v26/activity_login.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_automatching.xml" value="0.25833333333333336" />
-        <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_create_room.xml" value="0.33" />
+        <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_create_room.xml" value="0.12087912087912088" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_feedback.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_find.xml" value="0.33" />
-        <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_login.xml" value="0.14" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_main.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_recorestaurant.xml" value="0.2046875" />
@@ -51,6 +51,7 @@
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_search_info.xml" value="0.2046875" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_start.xml" value="0.33" />
         <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/activity_verification.xml" value="0.25" />
+        <entry key="..\:/Users/tlsdl/Desktop/Android/EAT_Client/EATProject/app/src/main/res/layout/itemlayout.xml" value="0.25" />
       </map>
     </option>
   </component>

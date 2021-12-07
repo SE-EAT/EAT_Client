@@ -45,7 +45,7 @@ public interface ApiMethods {
 
     // 원하는 방 클릭했을 때 호출.
     // 해당 방으로 입장하기
-    @GET("/matching/rooms/{room_id}")
+    @GET("/matching/room/{room_id}")
     void getRoomById(@Path(value = "room_id", encode = true) String room_id, RestCallback<ResponseMessage> restCallbacks);
 
     // 로그인 요청
@@ -62,8 +62,12 @@ public interface ApiMethods {
     void getProfile(@Body UserInfo userInfo,
                     RestCallback<List<String>> restCallback);
 
+    // 입맛 수정
     @POST("/users/taste")
     void postTaste(@Body RequestTaste requestTaste, RestCallback<ResponseMessage> restCallback);
 
+    // 자동 매칭으로 최대 방 3개 가져옴.
+    @GET("/matching/automatching")
+    void getAutoMatching(RestCallback<List<Room>> restCallback);
 
 }

@@ -3,7 +3,9 @@ package com.example.eatproject.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UserInfo {
+import java.io.Serializable;
+
+public class UserInfo implements Serializable {
     @SerializedName("_id")
     @Expose
     public String _id;

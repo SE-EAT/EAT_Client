@@ -38,11 +38,8 @@ public class MainActivity extends AppCompatActivity implements WebserviceRespons
                 String id = txt_id.getText().toString();
                 String pw = txt_password.getText().toString();
                 RequestLogin requestLogin = new RequestLogin(id, pw);
-
                 new WebService(MainActivity.this, (WebserviceResponseListner)MainActivity.this,
                         "postLogin", requestLogin).execute();
-
-
             }
         });
 
@@ -63,9 +60,6 @@ public class MainActivity extends AppCompatActivity implements WebserviceRespons
         if (webServiceName.equalsIgnoreCase("postLogin")) {
             if (!flagToCheckFailure) {
                 UserInfo user = (UserInfo) response;
-                // Toast.makeText(this, rooms.get(0).toString(), Toast.LENGTH_LONG).show();
-                // updateRoomList(rooms);
-                // tv_msg.setText(data.getMessage());
 
                 if(user != null){
                     int sum = 0;

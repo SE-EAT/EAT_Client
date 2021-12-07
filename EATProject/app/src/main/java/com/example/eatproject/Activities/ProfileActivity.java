@@ -35,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity implements WebserviceResp
         TextView emailText = (TextView) findViewById(R.id.emailText);
         TextView addressText = (TextView) findViewById(R.id.addressText);
 
+        // 프로필 화면 업데이트.
         nicknameText.setText("닉네임: " + WebService.userInfo.nickName);
         //studentIDText.setText("학번: " + WebService.userInfo.studentID);
         studentIDText.setText("학번: 2016");
@@ -61,14 +62,7 @@ public class ProfileActivity extends AppCompatActivity implements WebserviceResp
     public void OnResponse(Object response, boolean flagToCheckFailure, String webServiceName) {
         if (webServiceName.equalsIgnoreCase("getProfile")) {
             if (!flagToCheckFailure) {
-                List<String> preferList = (List<String>) response;
-                for(String s : preferList){
-                   Log.e("Text", s);
-                }
-                // Toast.makeText(this, preferList.toString(), Toast.LENGTH_LONG).show();
-
-                // Log.v("Test", msg.get(0));
-                // tv_msg.setText(data.getMessage());
+                // Success !
             } else {
                 Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
             }

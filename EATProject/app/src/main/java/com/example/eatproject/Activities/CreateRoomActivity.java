@@ -51,8 +51,15 @@ public class CreateRoomActivity extends AppCompatActivity implements WebserviceR
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(selectState == 0){
+                    // 시간, Category를 고르는 상태.
+
                     String hour = hourText.getText().toString();
                     String minute = minuteText.getText().toString();
+
+                    if(hour.compareTo("")==0 || minute.compareTo("")==0){
+                        Toast.makeText(getApplicationContext(),"시간을 입력해주세요.",Toast.LENGTH_LONG).show();
+                        return;
+                    }
 
                     if(Integer.parseInt(hour)<0 || Integer.parseInt(hour) >23){
                         Toast.makeText(getApplicationContext(),"시간을 정확히 입력해주세요. (0~23)",Toast.LENGTH_LONG).show();
@@ -83,6 +90,8 @@ public class CreateRoomActivity extends AppCompatActivity implements WebserviceR
                             "createRoom", appointment).execute();
                 }
                 else if(selectState == 1){
+                    // 해당 Category의 식당을 고르는 상태.
+
                     String text = (String) adapterView.getItemAtPosition(i);
                     RequestCreateRoom requestCreateRoom = new RequestCreateRoom(WebService.userInfo, restaurants.get(i)._id);
                     new WebService(CreateRoomActivity.this, (WebserviceResponseListner)CreateRoomActivity.this,
@@ -97,12 +106,16 @@ public class CreateRoomActivity extends AppCompatActivity implements WebserviceR
         if (webServiceName.equalsIgnoreCase("createRoom")) {
             if (!flagToCheckFailure) {
                 restaurants = (List<Restaurant>) response;
-                selectState = 1;
+                if(restaurants.isEmpty()) {
+                    Toast.makeText(this, "해당 카테고리의 식당이 없습니다.", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
-                list.clear();
+                selectState = 1;
+                list.clear();   // Category 들어있던 list 초기화.
                 for(Restaurant r : restaurants){
-                    list.add(r.name);
-                    adapter.notifyDataSetChanged();
+                    list.add(r.name);   // 식당들로 list 채우기.
+                    adapter.notifyDataSetChanged(); // 바꾼 list를 notify.
                 }
             } else {
                 Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();

@@ -117,6 +117,9 @@ public class WebService extends AsyncTask<String, Void, String> {
             case "createRoom2":
                 createRoom2();
                 break;
+            case "autoMatching":
+                autoMatching();
+                break;
             default:
                 break;
         }
@@ -210,7 +213,7 @@ public class WebService extends AsyncTask<String, Void, String> {
         RestClient.get().getRooms(new RestCallback<List<Room>>() {
             @Override
             public void success(List<Room> rooms, Response response) {
-                Log.e("Successful", rooms.get(0).getRestaurant().name + "/" + response.getUrl());
+                // Log.e("Successful", rooms.get(0).getRestaurant().name + "/" + response.getUrl());
                 listener.OnResponse(rooms, false, "getRooms");
             }
 
@@ -222,6 +225,23 @@ public class WebService extends AsyncTask<String, Void, String> {
         });
     }
 
+    private void getRoomById() {
+        RestClient.get().getRoomById(roomId, new RestCallback<ResponseMessage>() {
+            @Override
+            public void success(ResponseMessage responseMessage, Response response) {
+                Log.e("Successful", responseMessage + "/" + response.getUrl());
+                listener.OnResponse(responseMessage, false, "getRoomById");
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.e("Url", "error: " + error.toString() + "/" + error.getUrl());
+                listener.OnResponse(new Object(), true, "getRoomById");
+            }
+        });
+    }
+
+    // Category 선택하면, 해당 Category의 식당들을 전부 받아옴.
     private void createRoom() {
         RestClient.get().postCreateRoom(category, new RestCallback<List<Restaurant>>() {
             @Override
@@ -238,23 +258,7 @@ public class WebService extends AsyncTask<String, Void, String> {
         });
     }
 
-    RequestJoinRoom tmpJoinRoom = new RequestJoinRoom(" ", " ");
-    private void getRoomById() {
-        RestClient.get().getRoomById(tmpJoinRoom.id, new RestCallback<ResponseMessage>() {
-            @Override
-            public void success(ResponseMessage responseMessage, Response response) {
-                Log.e("Successful", responseMessage + "/" + response.getUrl());
-                listener.OnResponse(responseMessage, false, "getRoomById");
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                Log.e("Url", "error: " + error.toString() + "/" + error.getUrl());
-                listener.OnResponse(new Object(), true, "getRoomById");
-            }
-        });
-    }
-
+    // 식당을 선택하면, 방을 만들어줌.
     private void createRoom2() {
         RestClient.get().postCreateRoom2(requestCreateRoom, new RestCallback<ResponseMessage>() {
             @Override
@@ -267,6 +271,22 @@ public class WebService extends AsyncTask<String, Void, String> {
             public void failure(RetrofitError error) {
                 Log.e("Url", "error: " + error.toString() + "/" + error.getUrl());
                 listener.OnResponse(new Object(), true, "createRoom2");
+            }
+        });
+    }
+
+    private void autoMatching() {
+        RestClient.get().getAutoMatching(new RestCallback<List<Room>>() {
+            @Override
+            public void success(List<Room> rooms, Response response) {
+                // Log.e("Successful",  rooms.get(0).toString() + "/" + response.getUrl());
+                listener.OnResponse(rooms, false, "autoMatching");
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.e("Url", "error: " + error.toString() + "/" + error.getUrl());
+                listener.OnResponse(new Object(), true, "autoMatching");
             }
         });
     }

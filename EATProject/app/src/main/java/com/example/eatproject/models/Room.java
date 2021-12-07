@@ -5,7 +5,9 @@ import com.example.eatproject.models.Date;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Room {
+import java.io.Serializable;
+
+public class Room implements Serializable {
     @SerializedName("_id")
     @Expose
     private String _id;
@@ -36,9 +38,7 @@ public class Room {
     public void set_id(String _id) {
         this._id = _id;
     }
-    public UserInfo[] getUsers() {
-        return users;
-    }
+    public UserInfo[] getUsers() { return users; }
     public void setUsers(UserInfo[] users) {
         this.users = users;
     }

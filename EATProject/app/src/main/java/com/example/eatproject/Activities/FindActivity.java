@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.eatproject.R;
+import com.example.eatproject.models.ResponseMessage;
+import com.example.eatproject.models.RoomListAdapter;
 import com.example.eatproject.servers.WebService;
 import com.example.eatproject.servers.WebserviceResponseListner;
 import com.example.eatproject.models.RequestCategory;
@@ -22,7 +25,7 @@ import java.util.List;
 public class FindActivity extends AppCompatActivity implements WebserviceResponseListner {
 
     List<Button> roomButtons = new ArrayList<Button>();
-    List<Room> rooms = new ArrayList<Room>();
+    ArrayList<Room> rooms = new ArrayList<Room>();
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -30,12 +33,8 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
         setContentView(R.layout.activity_find);
         Intent indent = getIntent();
 
-        try {
-            new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
-                    "getRooms").execute();
-        } catch (Exception e) {
-
-        }
+        new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
+                "getRooms").execute();
 
         // 현재 약속 화면 전환
         Button appointmentButton = (Button) findViewById(R.id.curAppointmentButton);
@@ -52,8 +51,8 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
         autoMatchingButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(), AutoMatchingActivity.class);
-                startActivity(intent);
+                new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
+                        "autoMatching").execute();
             }
         });
 
@@ -87,7 +86,7 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
             @Override
             public void onClick(View v){
                 new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
-                        "getRoomById").execute();
+                        "getRoomById", rooms.get(1).get_id()).execute();
 
                 Intent intent = new Intent(getApplicationContext(), RoomActivity.class);
                 startActivity(intent);
@@ -100,7 +99,7 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
             @Override
             public void onClick(View v){
                 new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
-                        "getRoomById").execute();
+                        "getRoomById", rooms.get(2).get_id()).execute();
 
                 Intent intent = new Intent(getApplicationContext(), RoomActivity.class);
                 startActivity(intent);
@@ -113,7 +112,7 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
             @Override
             public void onClick(View v){
                 new WebService(FindActivity.this, (WebserviceResponseListner)FindActivity.this,
-                        "getRoomById").execute();
+                        "getRoomById", rooms.get(3).get_id()).execute();
 
                 Intent intent = new Intent(getApplicationContext(), RoomActivity.class);
                 startActivity(intent);
@@ -132,7 +131,6 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
 
     private void init(Button appointmentButton, List<Button> roomButtons){
         appointmentButton.setEnabled(false);
-
         for(Button b : roomButtons){
             b.setVisibility(View.INVISIBLE);
         }
@@ -154,21 +152,27 @@ public class FindActivity extends AppCompatActivity implements WebserviceRespons
     public void OnResponse(Object response, boolean flagToCheckFailure, String webServiceName) {
         if (webServiceName.equalsIgnoreCase("getRooms")) {
             if (!flagToCheckFailure) {
-                rooms = (List<Room>) response;
-                // Log.e(rooms.toString());
-                // Toast.makeText(this, rooms.get(0).toString(), Toast.LENGTH_LONG).show();
+                rooms = (ArrayList<Room>) response;
                 updateRoomList(rooms);
-                // tv_msg.setText(data.getMessage());
+                // RoomListAdapter adapter = new RoomListAdapter(this, R.layout.itemlayout, rooms);
+                // ListView mListView = (ListView) findViewById(R.id.listview);
+                // mListView.setAdapter(adapter);
             } else {
                 Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
             }
         } else if (webServiceName.equalsIgnoreCase("getRoomById")) {
             if (!flagToCheckFailure) {
-                List<Room> rooms = (List<Room>) response;
-                // Log.e(rooms.toString());
-                // Toast.makeText(this, rooms.get(0).toString(), Toast.LENGTH_LONG).show();
-
-                // tv_msg.setText(data.getMessage());
+                ResponseMessage msg = (ResponseMessage) response;
+                Toast.makeText(this, msg.msg, Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
+            }
+        } else if (webServiceName.equalsIgnoreCase("autoMatching")) {
+            if (!flagToCheckFailure) {
+                ArrayList<Room> rooms = (ArrayList<Room>) response;
+                Intent intent = new Intent(getApplicationContext(), AutoMatchingActivity.class);
+                intent.putExtra("rooms", rooms);
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
             }

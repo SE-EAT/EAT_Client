@@ -58,30 +58,28 @@ public class ResearchActivity extends AppCompatActivity implements WebserviceRes
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
                 if(preferCnt > 5) return;
-                mainText.setText(preferCnt + " 순위를 선택해 주세요.");
                 String text = (String) adapterView.getItemAtPosition(index);
                 Toast.makeText(getApplicationContext(),text,Toast.LENGTH_LONG).show();
                 list_category.remove(index);
                 adapter.notifyDataSetChanged();
                 preferCnt++;
+                mainText.setText(preferCnt + " 순위를 선택해 주세요.");
 
+                if(preferCnt >5){
+                    mainText.setText("선호도 조사를 종료합니다.");
+                    button.setActivated(true);
+                }
+
+                // 사용자가 선택한 Category의 index(=j) 구하기.
                 int j = 0;
                 for(j=0; j<list.length; j++){
                     if(text == list[j]) break;
                 }
-
                 RequestTaste requestTaste = new RequestTaste(WebService.userInfo, j);
-
                 new WebService(ResearchActivity.this, (WebserviceResponseListner)ResearchActivity.this,
                         "postTaste", requestTaste).execute();
             }
         });
-
-
-        if(preferCnt >5){
-            mainText.setText("선호도 조사를 종료합니다.");
-            button.setActivated(true);
-        }
 
 
     }
@@ -91,8 +89,6 @@ public class ResearchActivity extends AppCompatActivity implements WebserviceRes
         if (webServiceName.equalsIgnoreCase("postTaste")) {
             if (!flagToCheckFailure) {
                 ResponseMessage msg = (ResponseMessage) response;
-                Log.v("Test", msg.msg);
-                // tv_msg.setText(data.getMessage());
             } else {
                 Toast.makeText(this, "Something went Wrong", Toast.LENGTH_LONG).show();
             }
